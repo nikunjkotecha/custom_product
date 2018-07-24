@@ -1,0 +1,22 @@
+fields:
+  # Data from extension to handle custom requirements.
+  labels:
+    serialize: 1
+    parent: 'extension'
+    label: 'Product Labels'
+    description: 'Product Labels.'
+    type: 'text_long'
+    visible_form: 0
+
+  color:
+    label: 'Color'
+    cardinality: -1
+    index: 1
+    facet: 1
+
+  size:
+    label: 'Size'
+    cardinality: -1
+    configurable: 1
+    index: 1
+    facet: 1
