@@ -12,3 +12,16 @@ function custom_product_acq_sku_base_field_additions_alter(array &$fields = []) 
   $custom_fields = \Drupal::config('custom_product.sku_base_fields')->get('fields');
   $fields = array_merge($fields, $custom_fields);
 }
+
+/**
+ * Implements hook_acq_sku_base_fields_updated().
+ */
+function custom_product_acq_sku_base_fields_updated(array $fields, $op = 'add') {
+  foreach ($fields as $field_code => $field) {
+    if (empty($field['facet'])) {
+      continue;
+    }
+
+    // Add facets probably to search indexes introduced by this module.
+  }
+}
